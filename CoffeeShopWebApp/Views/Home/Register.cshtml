@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register for this sweet sweet coffee shop by filling out the fields below</h2>
+@model CoffeeShopWebApp.Models.UserInput
+
+<form action="/Home/NewUserRegistered"method="post">
+    First Name: <input type ="text" name ="FirstName" /><br />
+    Last Name: <input type ="text" name ="LastName" /><br />
+    Email: <input type="email" name ="Email"/><br />
+    Phone Number: <input type="text" name ="TelephoneNumber"/><br />
+    Password: <input type="password" name="Password" /><br />
+
+    <input type ="submit" value="Register User"/>
+</form>
+
