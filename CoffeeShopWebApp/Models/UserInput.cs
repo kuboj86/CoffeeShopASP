@@ -5,41 +5,40 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
-using System.ComponentModel.DataAnnotations;
+
 
 namespace CoffeeShopWebApp.Models
 {
     public class UserInput
     {
-        public UserInput()
-        {
-            FirstName = "";
-            LastName = "";
-            Email = "";
-            TelephoneNumber = 0;
-            Password = "";
-        }
-
-        public UserInput(string firstname, string lastname, string email, int telephonenumber, string password)
-        {
-            this.FirstName = firstname;
-            this.LastName = lastname;
-            this.Email = email;
-            this.TelephoneNumber = telephonenumber;
-            this.Password = password;
-        }
-        [Required]
+        [RegularExpression("^[A-Za-z]{2,}$", ErrorMessage = "Can only accept letters")]
+        [Required(ErrorMessage = "Must enter in a name")]
         public string FirstName { set; get; }
-        [Required]
+
+        [RegularExpression("^[A-Za-z]{2,}$", ErrorMessage = "Can only accept letters")]
+        [Required(ErrorMessage = "Must enter in a name")]
         public string LastName { set; get; }
-        [Required]
+        
         public string Email { set; get; }
-        [Required]
-        public int TelephoneNumber { set; get; }
-        [Required]
+
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid Phone number")]
+        [Required(ErrorMessage = "Must enter in a phone number")]
+        public string TelephoneNumber { set; get; }
+        
+
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")]
+        [Required(ErrorMessage = "Password must have at least eight characters with atleast one letter and one number")]
+        
         public string Password { set; get; }
+
+
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")]
+        [Required(ErrorMessage = "Password must have at least eight characters with atleast one letter and one number")]
         
-            
         
+        public string PasswordTwo { set; get; }
+
+
+
     }
 }

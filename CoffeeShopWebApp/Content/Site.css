@@ -1,10 +1,33 @@
 ﻿body {
+    background: url("http://avichetri.co.uk/blog/wp-content/uploads/2014/11/Screen-Shot-2014-11-26-at-15.28.26.png");
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
+#RegisterText {
+    color: Red;
+}
+#AboutTitleText {
+    color: #2b130a;
+}
+#AboutSiteText {
+    color: #bd956a;
+}
+
+#RegistrationForm {
+    background-color: grey;
+    padding: 20px 0px 20px 0px;
+    opacity: .93;
+    align-content: center;
+}
+#FrontpageForm {
+    background-color: #ffd873;
+    padding: 20px 0px 20px 0px;
+    opacity: .92;
+    align-content: center;
+}
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }

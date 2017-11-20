@@ -3,16 +3,32 @@
     ViewBag.Title = "Register";
 }
 
-<h2>Register for this sweet sweet coffee shop by filling out the fields below</h2>
-@model CoffeeShopWebApp.Models.UserInput
+<div align="center" id="RegistrationForm">
+    <h2>Register for this coffee shop by filling out the fields below</h2>
+    @model CoffeeShopWebApp.Models.UserInput
 
-<form action="/Home/NewUserRegistered"method="post">
-    First Name: <input type ="text" name ="FirstName" /><br />
-    Last Name: <input type ="text" name ="LastName" /><br />
-    Email: <input type="email" name ="Email"/><br />
-    Phone Number: <input type="text" name ="TelephoneNumber"/><br />
-    Password: <input type="password" name="Password" /><br />
+    <form action="/Home/NewUserRegistered"method="post">
+    
 
-    <input type ="submit" value="Register User"/>
-</form>
+        <tr>
+            <td>Sex</td>
+            <td>
+                <input type="radio" name="sex" value="male" size="10">Male
+                <input type="radio" name="sex" value="Female" size="10">Female<br/><br/>
+            </td>
+        </tr>
+        First Name: <input type="text" name="FirstName"/><br/><br/>
+        Last Name: <input type="text" name="LastName"/><br/><br/>
+        Email: <input type="email" name="Email"/><br/><br/>
+        Phone Number: <input type="text" name="TelephoneNumber"/><br/><br/>
+        Password: <input type="password" name="Password"/><br/><br/>
+        Re-Enter Password <input type="password" name="PasswordTwo"/><br/><br/>
+        <
+
+        <input type="submit" value="Register User"/>
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+    </form>
+</div>
 

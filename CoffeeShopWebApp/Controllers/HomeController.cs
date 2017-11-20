@@ -16,13 +16,22 @@ namespace CoffeeShopWebApp.Controllers
 
         public ActionResult Register()
         {
-            return View(); 
+            return View();  
         }
 
-        public ActionResult NewUserRegistered(UserInput NewCustomer)
+        public ActionResult NewUserRegistered(UserInput userInput)
         {
-            ViewBag.FirstName = NewCustomer.FirstName;
-            return View();
+            if (ModelState.IsValid)
+            {
+                ViewBag.FirstName = userInput.FirstName;
+                return View();
+            }
+            
+            else
+            {
+                return View("Register");
+            }
+           
         }
     
     }
