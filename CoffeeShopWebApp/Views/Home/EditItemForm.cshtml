@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "EditItemForm";
+}
+
+<h2>EditItemForm</h2>
+@model CoffeeShopWebApp.Models.Item
+<div id="RegistrationForm" >
+<Form action="/Home/SaveEditedItem" method="post">
+    <label>Product Name:</label><input type="text" name="Name" value="@ViewBag.ItemToEdit.Name" /><br />
+    <label>Description:</label><input type="text" name="Description" value="@ViewBag.ItemToEdit.Description" /><br />
+    <label>Quantity:</label><input type="text" name="Quantity" value="@ViewBag.ItemToEdit.Quantity" /><br />
+    <label>Price:</label><input type="text" name="Price" value="@ViewBag.ItemToEdit.Price" /><br />
+    <input type="submit" value="Save" />
+
+</Form>
+    </div>
+
+

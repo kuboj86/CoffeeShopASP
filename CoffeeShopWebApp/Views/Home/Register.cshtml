@@ -4,31 +4,38 @@
 }
 
 <div align="center" id="RegistrationForm">
-    <h2>Register for this coffee shop by filling out the fields below</h2>
+    <h2>Register for this sweet coffee shop by filling out the fields below so we can spam you with uesless stuff you will never look at</h2>
     @model CoffeeShopWebApp.Models.UserInput
 
-    <form action="/Home/NewUserRegistered"method="post">
-    
+    <form action="/Home/NewUserRegistered" method="post">
 
-        <tr>
-            <td>Sex</td>
-            <td>
-                <input type="radio" name="sex" value="male" size="10">Male
-                <input type="radio" name="sex" value="Female" size="10">Female<br/><br/>
-            </td>
-        </tr>
-        First Name: <input type="text" name="FirstName"/><br/><br/>
-        Last Name: <input type="text" name="LastName"/><br/><br/>
-        Email: <input type="email" name="Email"/><br/><br/>
-        Phone Number: <input type="text" name="TelephoneNumber"/><br/><br/>
-        Password: <input type="password" name="Password"/><br/><br/>
-        Re-Enter Password <input type="password" name="PasswordTwo"/><br/><br/>
-        <
+        <div class="form-group">
+            <label class="my-label" for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" />
+        </div>
+        <div class="form-group">
+            <label class="my-label" for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" />
+        </div>
+        <div class="form-group">
+            <label class="my-label" for="Email">Email</label>
+            <input type="text" class="form-control" id="Email" name="Email" />
+        </div>
+        <div class="form-group">
+            <label class="my-label" for="TelephoneNumber">TelephoneNumber</label>
+            <input type ="text" class ="form-control" id="TelephoneNumber" name="TelephoneNumber"/>
+        </div>
+        <div class="form-group">
+            <label class="my-label" for="Password">Password</label>
+            <input type="text" class="form-control" id="Password" name="Password" />
+        </div>
+            @*Phone Number: <input type="text" class="form-control" name="TelephoneNumber" />*@
+            @*Password: <input type="password" class="form-control" name="Password" />*@
+        @*Re-Enter Password <input type="password" class="form-control" name="PasswordTwo" />*@
 
-        <input type="submit" value="Register User"/>
-        @Html.ValidationSummary("", new { @class = "text-danger" })
 
-
-    </form>
+            <input type="submit" value="Register User" class="form-control" />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+</form>
 </div>
 

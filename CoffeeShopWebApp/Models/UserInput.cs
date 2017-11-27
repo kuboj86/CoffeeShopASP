@@ -28,12 +28,13 @@ namespace CoffeeShopWebApp.Models
 
         [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")]
         [Required(ErrorMessage = "Password must have at least eight characters with atleast one letter and one number")]
-        
+
+
         public string Password { set; get; }
 
 
         [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")]
-        [Required(ErrorMessage = "Password must have at least eight characters with atleast one letter and one number")]
+        [Required(ErrorMessage = "Passwords must match")]
         
         
         public string PasswordTwo { set; get; }
